@@ -1,0 +1,39 @@
+client:
+  server_host: "localhost"
+  server_port: 8443
+  sync_dir: "./client_data"
+  keys_dir: "./client_keys"
+  
+  # Connection settings
+  reconnect_attempts: 5
+  reconnect_delay: 10
+  heartbeat_interval: 30
+
+crypto:
+  kem_algorithm: "Kyber768"
+  sig_algorithm: "Dilithium3"
+  key_rotation_interval: 3600
+  
+  # Trust settings
+  verify_server_identity: true
+  trusted_fingerprints: []
+  strict_verification: false
+
+sync:
+  # Auto-sync settings
+  watch_files: true
+  sync_interval: 60  # seconds
+  
+  # Conflict resolution
+  default_conflict_strategy: "keep_both"
+  prompt_on_conflict: false
+  
+  # File transfer
+  resume_on_disconnect: true
+  retry_failed_transfers: 3
+
+logging:
+  level: "INFO"
+  file: "client.log"
+  max_size: 10485760
+  backup_count: 5

@@ -1,0 +1,74 @@
+# ==========================================
+# Python cache and build files
+# ==========================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+build/
+dist/
+
+# ==========================================
+# Virtual environments
+# ==========================================
+venv/
+.env/
+.env*/
+.venv*/
+
+# ==========================================
+# Logs and runtime data
+# ==========================================
+*.log
+*.tmp
+*.pid
+
+# ==========================================
+# Benchmarks, plots, and generated data
+# ==========================================
+benchmarks/*.csv
+benchmarks/*.json
+benchmarks/*.png
+
+# ==========================================
+# Cryptographic keys and sensitive files
+# ==========================================
+keys/client/*
+keys/server/*
+keys/trust/*
+!keys/trust/trusted_hosts.json  # keep the trust list if it's meant to be versioned
+
+# ==========================================
+# Local sync data (temporary documents, testing)
+# ==========================================
+sync_data/*
+
+# ==========================================
+# Docker & system files
+# ==========================================
+docker/
+*.tar
+*.img
+*.pid
+*.sock
+
+# ==========================================
+# OS and editor-specific files
+# ==========================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ==========================================
+# Test cache (pytest, coverage, etc.)
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+

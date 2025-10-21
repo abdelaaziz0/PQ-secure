@@ -1,0 +1,44 @@
+
+server:
+  host: "0.0.0.0"
+  port: 8443
+  sync_dir: "./server_data"
+  keys_dir: "./server_keys"
+  
+  # Connection settings
+  max_connections: 100
+  connection_timeout: 300
+  heartbeat_interval: 30
+
+crypto:
+  kem_algorithm: "Kyber768"
+  sig_algorithm: "Dilithium3"
+  key_rotation_interval: 3600  # seconds
+  
+  # Trust model
+  trust_on_first_use: true
+  require_certificate: false
+  ca_cert_path: null
+
+sync:
+  # Conflict resolution
+  default_conflict_strategy: "keep_both"
+  
+  # Deletion handling
+  tombstone_cleanup_days: 30
+  
+  # File transfer
+  chunk_size: 65536  # 64KB
+  enable_compression: false
+  max_file_size: 1073741824  # 1GB
+
+logging:
+  level: "INFO"
+  file: "server.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5
+
+performance:
+  worker_threads: 4
+  enable_metrics: true
+  metrics_output: "./metrics"
